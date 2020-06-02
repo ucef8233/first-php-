@@ -1,13 +1,13 @@
 <div class="card">
   <div class="card-header" id="headingOne">
     <h2 class="mb-0">
-      <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne"
-        aria-expanded="false" aria-controls="collapseOne">
+      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+        data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
         AJOUTER
       </button>
     </h2>
   </div>
-  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
     <?php include 'add.php'; ?>
     <div class="card-body ">
       <?php if (!empty($erreur)) : ?>
@@ -52,7 +52,7 @@
           <option value="user">user</option>
           <option value="dirrecteur">dirrecteur</option>
         </select>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">
       </form>
     </div>
   </div>

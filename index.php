@@ -1,6 +1,6 @@
 <?php
 $title = 'page d\'acceuil';
-require 'header.php';
+require_once 'header.php';
 ?>
 <p class="text-center display-3">
   Bienvenu sur l'app Gestion Congé

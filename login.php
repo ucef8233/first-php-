@@ -1,6 +1,6 @@
 <?php
 $title = 'Login';
-require 'header.php';
+include 'header.php';
 ?>
 
 <main class="text-center">
@@ -46,4 +46,4 @@ require 'header.php';
     <input type="password" class="form-control my-4" name="password" placeholder="Password">
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
-  <?php require 'footer.php'; ?>
+  <?php include 'footer.php'; ?>

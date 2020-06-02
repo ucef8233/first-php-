@@ -14,7 +14,7 @@ function nav_item(string $lien, string $titre, string $classHeader = ''): string
                <a class="' . $classHeader . '" href="/' . $_SESSION['type_user'] . '.php"> Profile: ' . $_SESSION['nom'] . ' </a>
              </li>
              <li class="nav-item  mx-4">
-               <a class="' . $classHeader . ' btn btn-outline-secondary " href="/logout.php"> Logout </a>
+               <a class="' . $classHeader . ' btn btn-outline-secondary " href="logout.php"> Logout </a>
              </li>';
     return $retur;
   else :
@@ -28,7 +28,7 @@ function nav_menu(string $classHeader = ''): string
 {
   return
     nav_item('/index.php', 'Home', $classHeader) .
-    nav_item('/login.php', 'Login', $classHeader);
+    nav_item('login.php', 'Login', $classHeader);
 }
 
 function activeProfil()

@@ -11,7 +11,7 @@ if (!empty($_POST)) :
     $query->execute([$_POST['newLogin']]);
     $userfetch = $query->fetch();
     if ($userfetch) :
-      $erreur['username'] = "pseudo deja existant"; 
+      $erreur['username'] = "pseudo deja existant";
     endif;
   endif;
   ///////////////////////////////////////////////////////////////////////// CIN 
