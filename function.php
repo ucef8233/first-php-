@@ -1,5 +1,5 @@
 <?php
-session_start();
+if (session_id() == "") session_start();
 // if (!function_exists('nav_item')) :  /// verriffier si la function existe 
 function nav_item(string $lien, string $titre, string $classHeader = ''): string
 {

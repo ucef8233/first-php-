@@ -3,7 +3,7 @@ session_start();
 require_once 'connexion.php';
 $reponse = $connexion->query('SELECT * FROM users');
 $reponse->execute();
-$fetch = $reponse->fetch();
+$fetch = $reponse->fetchAll();
 
 ?>
 <pre>

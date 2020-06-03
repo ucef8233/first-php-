@@ -16,7 +16,7 @@ $infos = $reponse->fetchALl();
         data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
         supprimer
       </button>
-      <form method="GET" class="d-flex w-50">
+      <form method="POST" action="delet.php" class="d-flex w-50">
         <label class=" sr-only ">Supprimer</label>
         <input type="text" class="form-control my-4 mx-3" name="Supprimer" placeholder="ID ou CIN">
         <input class="btn btn-danger  w-50 h-50 mt-4" type="submit" value="Supprimer">

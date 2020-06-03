@@ -1,10 +1,18 @@
 <?php
-$title = 'Section directeur';
-require 'header.php';
-
+session_start();
+if ($_SESSION) :
+  require 'header.php';
 ?>
+
 <h1 class="text-center mb-5 display-4">
-  Bienvenu sur la section <?= $_SESSION['type_user'] ?> De : <?= $_SESSION['nom'] ?> <?= $_SESSION['prenom'] ?>
+  Bienvenu sur la section <?= $_SESSION['type_user'] ?> De : <?= $_SESSION['nom'] ?> <?= $_SESSION['prenom']  ?>
+
 </h1>
 
-<?php require 'footer.php'; ?>
+
+<?php require 'footer.php';
+
+else :
+  include 'login.php';
+endif;
+?>

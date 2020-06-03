@@ -7,8 +7,9 @@
       </button>
     </h2>
   </div>
-  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-    <?php include 'add.php'; ?>
+  <?php include 'add.php'; ?>
+  <div id="collapseOne" class="collapse <?php if (!empty($erreur)) : ?> show
+    <?php endif; ?>   " aria-labelledby=" headingOne" data-parent="#accordionExample">
     <div class="card-body ">
       <?php if (!empty($erreur)) : ?>
       <div class="alert alert-danger">
@@ -20,7 +21,7 @@
         </ul>
       </div>
       <?php endif; ?>
-      <form action="/admin.php" method="POST" class="form-signin">
+      <form action="admin.php" method="POST" class="form-signin">
         <label class="sr-only">New Login</label>
         <input type="text" class="form-control" name="newLogin" placeholder="New Login"
           <?php if ((!empty($_POST['Newadress'])) && !$userfetch) : ?> value="<?= $_POST['newLogin']; ?>"
