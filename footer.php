@@ -2,6 +2,7 @@
 <footer>
   <p class="text-center">© 2017-2020</p>
 </footer>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 </script>
@@ -12,5 +13,18 @@
   integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
 </script>
 </body>
+<?php
+// if (isset($_GET['error'])) {
+//   if ($_GET['error'] == 'vide') {
+//     echo "<script>alert(\"veiller remplire ID de la personne a supprimer \")</script>";
+//   } elseif ($_GET['error'] == 'suppriper') {
+//     echo
+//       "<script>alert(\"User deleted \")</script>";
+//   } else if ($_GET['error'] == 'nondispo') {
+//     echo
+//       "<script>alert(\"ID non dispo\")</script>";
+//   }
+// } 
+?>
 
 </html>

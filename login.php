@@ -2,7 +2,6 @@
 $title = 'Login';
 include 'header.php';
 ?>
-
 <main class="text-center">
   <form action="/login.php" method="POST" class="form-signin">
     <h1 class="h3 mb-5 font-weight-normal">Please sign in</h1>
@@ -16,7 +15,6 @@ include 'header.php';
         $_SESSION = $fetch;
         if ($fetch) :
           if (password_verify($_POST['password'], $fetch['password'])) :
-            session_start();
             if ($fetch['type_user'] == 'admin') :
               header('Location: admin.php');
               exit();
