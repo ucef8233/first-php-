@@ -1,15 +1,10 @@
 <?php
-
 require_once 'connexion.php';
 $reponse = $connexion->query('SELECT * FROM users');
 $reponse->execute();
 $infos = $reponse->fetchALl();
 
 ?>
-<!-- <pre>
-
-</pre> -->
-
 <div class="card">
   <div class="card-header" id="headingTwo">
     <h2 class="mb-0 d-flex">
@@ -19,7 +14,7 @@ $infos = $reponse->fetchALl();
       </button>
       <form method="POST" action="delet.php" class="d-flex w-50">
         <label class=" sr-only ">Supprimer</label>
-        <input type="text" class="form-control my-4 mx-3" name="Supprimer" placeholder="ID ou CIN">
+        <input type="text" class="form-control my-4 mx-3" name="Supprimer" placeholder="ID">
         <input class="btn btn-danger  w-50 h-50 mt-4" type="submit" value="Delet">
       </form>
     </h2>
