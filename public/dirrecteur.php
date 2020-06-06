@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION) :
-  require 'header.php';
+  require '../docs/header.php';
 ?>
 
 <h1 class="text-center mb-5 display-4">
@@ -10,7 +10,7 @@ if ($_SESSION) :
 </h1>
 
 
-<?php require 'footer.php';
+<?php require '../docs/footer.php';
 
 else :
   include 'login.php';

@@ -1,10 +1,3 @@
-<?php
-require_once 'connexion.php';
-$reponse = $connexion->query('SELECT * FROM users');
-$reponse->execute();
-$infos = $reponse->fetchALl();
-
-?>
 <div class="card">
   <div class="card-header" id="headingTwo">
     <h2 class="mb-0 d-flex">
@@ -12,7 +5,7 @@ $infos = $reponse->fetchALl();
         data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
         supprimer
       </button>
-      <form method="POST" action="delet.php" class="d-flex w-50">
+      <form method="POST" action="../function/delet.php" class="d-flex w-50">
         <label class=" sr-only ">Supprimer</label>
         <input type="text" class="form-control my-4 mx-3" name="Supprimer" placeholder="ID">
         <input class="btn btn-danger  w-50 h-50 mt-4" type="submit" value="Delet">
@@ -35,35 +28,5 @@ $infos = $reponse->fetchALl();
     <?php
       endif;
     endif ?>
-    <div class="card-body">
-      <table class='table table-striped mx-2'>
-        <thead class="thead-dark">
-          <tr>
-            <th>id</th>
-            <th>login</th>
-            <th>adress</th>
-            <th>type_user</th>
-            <th>CIN</th>
-            <th>nom</th>
-            <th>prenom</th>
-            <th>adress</th>
-            <th>tel</th>
-          </tr>
-        </thead>
-        <?php foreach ($infos as $info) : ?>
-        <tbody>
-          <td><?= $info['id'] ?></td>
-          <td><?= $info['login']  ?></td>
-          <td><?= $info['adress']  ?></td>
-          <td><?= $info['type_user']  ?></td>
-          <td><?= $info['CIN']  ?></td>
-          <td><?= $info['nom']  ?></td>
-          <td><?= $info['prenom']  ?></td>
-          <td><?= $info['adress_postal']  ?></td>
-          <td><?= $info['tell']  ?></td>
-        </tbody>
-        <?php endforeach; ?>
-      </table>
-    </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION) :
-  require 'header.php';
+  require '../docs/header.php';
   $title = 'Section User';
 
 ?>
@@ -9,7 +9,7 @@ if ($_SESSION) :
   Bienvenu sur la section <?= $_SESSION['type_user'] ?> De : <?= $_SESSION['nom'] ?> <?= $_SESSION['prenom'] ?>
 </h1>
 
-<?php include 'footer.php';
+<?php include '../docs/footer.php';
 else :
   include 'login.php';
 endif;

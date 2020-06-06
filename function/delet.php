@@ -2,7 +2,7 @@
 $count = 0;
 if (!empty($_POST)) :
   if (!empty($_POST['Supprimer'])) :
-    require_once 'connexion.php';
+    require_once '../connexion.php';
     $verif = $connexion->query("SELECT id FROM users");
     $verif->execute();
     $infos = $verif->fetchALl();
@@ -16,15 +16,15 @@ if (!empty($_POST)) :
       $req = $connexion->prepare("DELETE FROM users WHERE id = :user_id");
       $req->bindParam(':user_id', $user_id, PDO::PARAM_INT);
       $req->execute();
-      header('location:admin.php?error=suppriper');
+      header('location:../public/admin.php?error=suppriper');
       exit();
     else :
-      header('location:admin.php?error=nondispo');
+      header('location:../public/admin.php?error=nondispo');
       exit();
     endif;
 
   else :
-    header('location:admin.php?error=vide');
+    header('location:../public/admin.php?error=vide');
     exit();
   endif;
 endif;

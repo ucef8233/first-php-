@@ -11,10 +11,10 @@ function nav_item(string $lien, string $titre, string $classHeader = ''): string
 
   if (!empty($_SESSION['login']) && $titre ==  'Login') :
     $retur =  ' <li class="' . activeProfil() . ' mx-4 ">
-               <a class="' . $classHeader . '" href="/' . $_SESSION['type_user'] . '.php"> Profile: ' . $_SESSION['nom'] . ' </a>
+               <a class="' . $classHeader . '" href="/GestionConge/public/' . $_SESSION['type_user'] . '.php"> Profile: ' . $_SESSION['nom'] . ' </a>
              </li>
              <li class="nav-item  mx-4">
-               <a class="' . $classHeader . ' btn btn-outline-secondary " href="logout.php"> Logout </a>
+               <a class="' . $classHeader . ' btn btn-outline-secondary " href="../function/logout.php"> Logout </a>
              </li>';
     return $retur;
   else :
@@ -27,13 +27,13 @@ function nav_menu(string $classHeader = ''): string
 
 {
   return
-    nav_item('/index.php', 'Home', $classHeader) .
-    nav_item('login.php', 'Login', $classHeader);
+    nav_item('/GestionConge/public/index.php', 'Home', $classHeader) .
+    nav_item('/GestionConge/public/login.php', 'Login', $classHeader);
 }
 
 function activeProfil()
 {
-  if ($_SERVER['SCRIPT_NAME'] === '/' . $_SESSION['type_user'] . '.php') {
+  if ($_SERVER['SCRIPT_NAME'] === '/GestionConge/public/' . $_SESSION['type_user'] . '.php') {
     return 'active';
   }
 }

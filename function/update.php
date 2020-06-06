@@ -3,7 +3,8 @@ session_start();
 $count = 0;
 if (!empty($_POST)) :
   if (!empty($_POST['updatephp'])) :
-    require_once 'connexion.php';
+    $_SESSION['idupdate'] = $_POST['updatephp'];
+    require_once '../connexion.php';
     $verif = $connexion->query("SELECT id FROM users");
     $verif->execute();
     $infos = $verif->fetchALl();
@@ -19,11 +20,11 @@ if (!empty($_POST)) :
       $req->execute();
       $recup = $req->fetch();
       $_SESSION['recup'] = $recup;
-      header('location:admin.php?errors=trouver');
+      header('location:../public/admin.php?errors=trouver');
     else :
-      header('location:admin.php?errors=Nontrouver');
+      header('location:../public/admin.php?errors=Nontrouver');
     endif;
   else :
-    header('location:admin.php?errors=vide');
+    header('location:../public/admin.php?errors=vide');
   endif;
 endif;

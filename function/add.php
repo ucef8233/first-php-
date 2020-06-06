@@ -4,7 +4,7 @@
 if (!empty($_POST)) :
   /// require cnx 
   session_start();
-  require_once 'connexion.php';
+  require_once '../connexion.php';
   $erreur = [];
   ///////////////////////////////////////////////////////////////////////// login 
   if (empty($_POST['newLogin']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['newLogin'])) : // si existe + caractére a utiliser
@@ -14,6 +14,7 @@ if (!empty($_POST)) :
     $query->execute([$_POST['newLogin']]);
     $userfetch = $query->fetch();
     if ($userfetch) :
+      $_SESSION['userfetch'] = $userfetch;
       $erreur['username'] = "pseudo deja existant";
     endif;
   endif;
@@ -25,6 +26,7 @@ if (!empty($_POST)) :
     $query->execute([$_POST['NewCIN']]);
     $CINfetch = $query->fetch();
     if ($CINfetch) :
+      $_SESSION['CINfetch'] = $CINfetch;
       $erreur['NewCIN'] = "CIN deja existant";
     endif;
   endif;
@@ -56,6 +58,7 @@ if (!empty($_POST)) :
     $query->execute([$_POST['Newadress']]);
     $mailfetch = $query->fetch();
     if ($mailfetch) :
+      $_SESSION['mailfetch'] = $mailfetch;
       $erreur['adressmail'] = "adressmail deja existant";
     endif;
   endif;
@@ -63,19 +66,17 @@ if (!empty($_POST)) :
   if (empty($_POST['role_id'])) :
     $erreur['id_roles'] = "id non valide";
   endif;
+  $_SESSION['post'] = $_POST;
   $_SESSION['erreurcreat'] = $erreur;
   if (empty($erreur)) :
-    require_once 'connexion.php';
+    // require_once '../connexion.php';
     if (!empty($_POST['newLogin'])) :
       $query = $connexion->prepare("INSERT INTO users SET login = ?, Password = ?, adress = ?, type_user = ? , nom = ?, prenom = ?, adress_postal = ? , CIN = ?, tell = ?");
       $passwordhash = password_hash($_POST['newPassword'], PASSWORD_BCRYPT);
-      $_SESSION['verifpass'] = $passwordhash;
       $query->execute([$_POST['newLogin'], $passwordhash, $_POST['Newadress'], $_POST['role_id'], $_POST['newNom'], $_POST['newPrenom'], $_POST['newAdressPostal'], $_POST['NewCIN'], $_POST['newTelNum']]);
-      header('location:admin.php?validation=addok');
-    // elseif (!empty($_POST['Modifier'])) :
-
+      header('location:../public/admin.php?validation=addok');
     endif;
   else :
-    header('location:admin.php?erreuradd=addnull');
+    header('location:../public/admin.php?erreuradd=addnull');
   endif;
 endif;

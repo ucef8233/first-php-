@@ -1,12 +1,12 @@
 <?php
 $title = 'Login';
-include 'header.php';
+include '../docs/header.php';
+require_once '../connexion.php';
 ?>
 <main class="text-center">
-  <form action="/login.php" method="POST" class="form-signin">
+  <form action="login.php" method="POST" class="form-signin">
     <h1 class="h3 mb-5 font-weight-normal">Please sign in</h1>
     <?php
-    require_once 'connexion.php';
     if (!empty($_POST)) :
       if (!empty($_POST['login']) && !empty($_POST['password'])) :
         $query = $connexion->prepare("SELECT * FROM users WHERE login='" . $_POST['login'] . "' ");
@@ -44,4 +44,4 @@ include 'header.php';
     <input type="password" class="form-control my-4" name="password" placeholder="Password">
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
-  <?php include 'footer.php'; ?>
+  <?php include '../docs/footer.php'; ?>
