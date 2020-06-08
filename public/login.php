@@ -16,7 +16,7 @@ require_once '../connexion.php';
         if ($fetch) :
           if (password_verify($_POST['password'], $fetch['password'])) :
             if ($fetch['type_user'] == 'admin') :
-              header('Location: admin.php');
+              header('Location: admin1.php');
               exit();
             elseif ($fetch['type_user'] == 'dirrecteur') :
               header('Location: dirrecteur.php');
