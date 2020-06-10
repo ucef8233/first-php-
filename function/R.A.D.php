@@ -76,7 +76,7 @@ if (!empty($_POST)) :
     else :
       header('location:../public/admin1.php?erreurupdate=updatenull');
     endif;
-  else :
+  elseif (!empty($_POST['Delet']) && !empty($_POST['check'])) :
     require_once '../connexion.php';
     $verif = $connexion->query("SELECT id FROM users");
     $verif->execute();
@@ -97,6 +97,9 @@ if (!empty($_POST)) :
     //   header('location:../public/admin1.php?error=nondispo');
     //   exit();
     endif;
+  else :
+    header('location:../public/admin1.php?error=test');
+    exit();
   endif;
 
 endif;

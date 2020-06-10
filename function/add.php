@@ -1,11 +1,11 @@
 <?php
-
 ////// modifier tout les erreur en get 
 if (!empty($_POST)) :
   /// require cnx 
   session_start();
   require_once '../connexion.php';
   $erreur = [];
+
   ///////////////////////////////////////////////////////////////////////// login 
   if (empty($_POST['newLogin']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['newLogin'])) : // si existe + caractére a utiliser
     $erreur['username'] = "pseuldo non valide";

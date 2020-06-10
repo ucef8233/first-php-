@@ -16,7 +16,7 @@ require_once '../connexion.php';
         if ($fetch) :
           if (password_verify($_POST['password'], $fetch['password'])) :
             if ($fetch['type_user'] == 'admin') :
-              header('Location: admin1.php');
+              header('Location: admin.php');
               exit();
             elseif ($fetch['type_user'] == 'dirrecteur') :
               header('Location: dirrecteur.php');
@@ -28,6 +28,7 @@ require_once '../connexion.php';
           endif;
         else :
     ?>
+    <!-- a modiffier methode Get -->
     <p class="bg-danger text-center p-2"> Id ou mdp incorrect</p>
     <?php
         endif;

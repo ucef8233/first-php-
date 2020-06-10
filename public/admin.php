@@ -9,7 +9,6 @@ if ($_SESSION) :
   Bienvenu sur la section <?= $_SESSION['type_user'] ?> De : <?= $_SESSION['nom'] ?> <?= $_SESSION['prenom'] ?>
 </h1>
 <?php require '../docs/R.A.Dhtml.php'; ?>
-
 <!-- add -->
 <?php require '../docs/addhtml.php'; ?>
 </div>

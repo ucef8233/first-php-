@@ -7,6 +7,10 @@ $infos = $reponse->fetchALl(); ?>
 <p class='bg-success text-center w-50 mx-auto mt-3 p-3 rounded-pill '> profil Supprimer </p>
 <?php
 endif; ?>
+<?php if (isset($_GET['error']) && ($_GET['error'] == 'test')) :  ?>
+<p class='bg-success text-center w-50 mx-auto mt-3 p-3 rounded-pill '> cocher </p>
+<?php
+endif; ?>
 <?php if (isset($_GET['error']) && ($_GET['error'] == 'coche')) :  ?>
 <p class='bg-danger text-center w-50 mx-auto mt-3 p-3 rounded-pill '> veuiller selectionner l'utulisateur a supprimer
 </p>
