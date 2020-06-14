@@ -8,7 +8,7 @@ if ($_SESSION) :
   Bienvenu sur la section <?= $_SESSION['type_user'] ?> De : <?= $_SESSION['nom'] ?> <?= $_SESSION['prenom']  ?>
 </h1>
 
-
+<?php include '../docs/demandehtml.php'; ?>
 <?php require '../docs/footer.php';
 
 else :
