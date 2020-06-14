@@ -1,3 +1,8 @@
+<?php
+require_once '../connexion.php';
+$reponse = $connexion->query('SELECT * FROM demande_conge');
+$reponse->execute();
+$infos = $reponse->fetchALl(); ?>
 <div class="card">
   <div class="card-header" id="headingTwo">
     <h2 class="mb-0">
@@ -7,14 +12,13 @@
       </button>
     </h2>
   </div>
-  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+  <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
     <div class="card-body">
       <form action="../function/conge.php" method="POST">
         <div class="d-flex my-5">
           <div class="mx-5">
             <label for="">Date debut </label> </br>
-            <input id="mySelect" type="date" name="datedebut" value="" onchange="myFunction()">
-
+            <input id="mySelect" type="date" name="datedebut" value="">
           </div>
           <div>
             <label for="">Date Fin </label> </br>
@@ -25,28 +29,33 @@
       </form>
     </div>
   </div>
+  <h1 class='text-center'>historique congé</h1>
+  <hr>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">date debut</th>
+          <th scope="col">date fin </th>
+          <th scope="col">status</th>
+        </tr>
+      </thead>
+      <?php
+      foreach ($infos as $info) :
+        if ($info['id_user'] == $_SESSION['id']) :
+      ?>
+      <tbody>
+        <tr>
+          <td><?= $info['date_debut'] ?></td>
+          <td><?= $info['date_fin'] ?></td>
+          <td><?= $info['confirmation'] ?></td>
+        </tr>
+      </tbody>
+      <?php
+        endif;
+      endforeach;
+      ?>
+    </table>
+  </div>
 </div>
 </div>
-<script>
-function myFunction() {
-  var x = document.getElementById("mySelect").value;
-  console.log(x);
-  var q = new Date();
-  var m = q.getMonth();
-  var d = q.getDay();
-  var y = q.getFullYear();
-
-  var date = new Date(y, m, d);
-
-  mydate = new Date(x);
-  console.log(date);
-  console.log(mydate)
-
-  // if (date > mydate) {
-  //   alert("greater");
-  // } else {
-  //   alert("smaller")
-  // }
-
-}
-</script>

@@ -8,7 +8,7 @@
         </button>
       </h2>
     </div>
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body mx-auto w-50">
         <form action="../function/atestation.php" method="POST" class='  my-3 d-flex justify-content-between'>
           <label for="example">IMPRIMER attestation de travaille</label>

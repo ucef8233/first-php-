@@ -1,7 +1,7 @@
 <?php
 $count = 0;
 if (!empty($_POST)) :
-  if (!empty($_POST['Modifier']) && !empty($_POST['check'])) :
+  if (!empty($_POST['Modifier']) && !empty($_POST['scales'])) :
     /// require cnx
     session_start();
     require_once '../connexion.php';
@@ -76,7 +76,7 @@ if (!empty($_POST)) :
     else :
       header('location:../public/admin.php?erreurupdate=updatenull');
     endif;
-  elseif (!empty($_POST['Delet']) && !empty($_POST['check'])) :
+  elseif (!empty($_POST['Delet']) && !empty($_POST['scales'])) :
     require_once '../connexion.php';
     $verif = $connexion->query("SELECT id FROM users");
     $verif->execute();
