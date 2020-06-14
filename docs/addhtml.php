@@ -1,6 +1,6 @@
 <tbody>
   <form method="POST" action="../function/add.php" class="form-signin">
-    <td></td>
+
     <td>
       <p class="my-3">ID</p>
     </td>

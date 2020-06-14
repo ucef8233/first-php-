@@ -71,10 +71,10 @@ if (!empty($_POST)) :
         $query = $connexion->prepare("UPDATE users SET login = ?, Password = ?, adress = ?, type_user = ? , nom = ?, prenom = ?, adress_postal = ? , CIN = ?, tell = ? WHERE id=$updated ");
         $passwordhash = password_hash($_POST['modifPassword'], PASSWORD_BCRYPT);
         $query->execute([$_POST['modifLogin'], $passwordhash, $_POST['modifadress'], $_POST['role_id'], $_POST['modifNom'], $_POST['modifPrenom'], $_POST['modifAdressPostal'], $_POST['ModifCIN'], $_POST['modifTelNum']]);
-        header('location:../public/admin1.php?modification=updateok');
+        header('location:../public/admin.php?modification=updateok');
       endif;
     else :
-      header('location:../public/admin1.php?erreurupdate=updatenull');
+      header('location:../public/admin.php?erreurupdate=updatenull');
     endif;
   elseif (!empty($_POST['Delet']) && !empty($_POST['check'])) :
     require_once '../connexion.php';
@@ -91,14 +91,14 @@ if (!empty($_POST)) :
       $req = $connexion->prepare("DELETE FROM users WHERE id = :user_id");
       $req->bindParam(':user_id', $user_id, PDO::PARAM_INT);
       $req->execute();
-      header('location:../public/admin1.php?error=suppriper');
+      header('location:../public/admin.php?error=suppriper');
       exit();
     // else :
     //   header('location:../public/admin1.php?error=nondispo');
     //   exit();
     endif;
   else :
-    header('location:../public/admin1.php?error=test');
+    header('location:../public/admin.php?error=test');
     exit();
   endif;
 

@@ -74,9 +74,9 @@ if (!empty($_POST)) :
       $query = $connexion->prepare("INSERT INTO users SET login = ?, Password = ?, adress = ?, type_user = ? , nom = ?, prenom = ?, adress_postal = ? , CIN = ?, tell = ?");
       $passwordhash = password_hash($_POST['newPassword'], PASSWORD_BCRYPT);
       $query->execute([$_POST['newLogin'], $passwordhash, $_POST['Newadress'], $_POST['role_id'], $_POST['newNom'], $_POST['newPrenom'], $_POST['newAdressPostal'], $_POST['NewCIN'], $_POST['newTelNum']]);
-      header('location:../public/admin1.php?validation=addok');
+      header('location:../public/admin.php?validation=addok');
     endif;
   else :
-    header('location:../public/admin1.php?erreuradd=addnull');
+    header('location:../public/admin.php?erreuradd=addnull');
   endif;
 endif;
