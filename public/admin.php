@@ -13,6 +13,7 @@ if ($_SESSION) :
 <!-- add -->
 <?php require '../docs/addhtml.php'; ?>
 </div>
+
 <?php include '../docs/footer.php';
 else :
   include 'login.php';

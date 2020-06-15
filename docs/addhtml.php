@@ -44,7 +44,7 @@
       <input type="text" class="form-control my-2" name="newTelNum" placeholder="new TelNum"
         <?php if (isset($_GET['erreuradd']) && ($_GET['erreuradd'] == 'addnull') && !empty($_SESSION['post']['newTelNum'])) : ?>
         value="<?= $_SESSION['post']['newTelNum']; ?>" <?php endif; ?>></td>
-    <td colspan="2"><input class="btn btn-lg btn-primary btn-block my-2" type="submit" name="Submit" value="Submit">
+    <td colspan="2"><input class="btn btn-lg btn-primary btn-block my-2" type="submit" name="Submit" value="Ajouter">
     </td>
   </form>
 </tbody>

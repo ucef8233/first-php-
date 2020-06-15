@@ -53,7 +53,6 @@ $databp =  '
 </html>';
 
 if (!empty($_POST['attestation'])) :
-
   $mpdf->WriteHTML($datatravail);
   $mpdf->Output('atestation.pdf', 'D');
 elseif (!empty($_POST['bultinpay'])) :
